@@ -6,9 +6,10 @@ r = rigdef('Sawtell');
 clear expt;
 expt.name = '20170126_006';
 
-exptfoldername = expt.name;
+exptdir = '/Users/kperks/mnt/sawtellnas/WorkingFolder/';
+exptfoldername = [exptfoldername '/'];
 
-expt = ImportExpt_Spike7(r.Dir.Server,[exptfoldername '/']);
+expt = ImportExpt_Spike7(exptdir,exptfoldername);
 
 save(fullfile(r.Dir.Expt,[expt.name]),'expt')
 

@@ -1,4 +1,8 @@
 function r = rigdef(location)
+if regexp(location,'Sawtell')
+    r.Dir.Mac = '/Users/kperks/Documents/SawtellLab/WorkingFolder';
+    r.Dir.Server = '/Users/kperks/mnt/sawtellnas/WorkingFolder/';
+end
 if regexp(location,'usbhome')
     r.Dir.Expt = 'E:\data\experiments\';
     r.Dir.Wavs = 'C:\krista\KPstims\singlemotiflibrary_44100Hz\';
