@@ -12,12 +12,12 @@ end
 nsamps = size(Command,1);
 
 if isempty(minwin)
-   minwin = 10; %default minwinsize 
+   minwin = 30; %default minwinsize 
 end
 minwinsize = round((minwin/1000)/dt);
 
 if isempty(jitter)
-    jitter = 10;
+    jitter = 5;
 end
 jittersize = round((jitter/1000)/dt);
 
@@ -27,11 +27,12 @@ sampind = 1;
 while sampind < nsamps 
     if allcrossings(sampind)<= 0
         AllMarkers(sampind) = 1;
-        sampind = sampind + minwinsize;
+        sampind = sampind + minwinsize;         
     end
     if allcrossings(sampind)>0 
        sampind = sampind+1; 
     end
+   
 end
 allinds = find(AllMarkers);
 

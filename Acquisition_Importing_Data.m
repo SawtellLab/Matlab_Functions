@@ -4,11 +4,11 @@ r = rigdef('Sawtell');
 
 %%
 clear expt;
-expt.name = '20170126_006';
+expt.name = '20170126_006_IV';
 
 exptfoldername = expt.name;
 
-expt = ImportExpt_Spike7(r.Dir.Server,[exptfoldername '/']);
+expt = ImportExpt_Spike7_txt(r.Dir.Server,[exptfoldername '/']);
 
 save(fullfile(r.Dir.Server,exptfoldername,expt.name),'expt')
 
@@ -21,7 +21,7 @@ minwin = [];
 jitter = [];
 dt = expt.dt;
 
-CmdMarkers = IsolateCommandMarkers(Command, thresh_inclusive, thresh_exclusive, minwin, jitter, dt);
+CmdMarkers = IsolateCommandMarkers(expt.Cmd, thresh_inclusive, thresh_exclusive, minwin, jitter, dt);
 expt.CmdMarkers = CmdMarkers;
 
 save(fullfile(r.Dir.Server,exptfoldername,expt.name),'expt')
