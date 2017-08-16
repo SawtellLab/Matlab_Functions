@@ -8,7 +8,7 @@ function [out, dt] =dnsample_data(in,oldRate,newRate)
 
 bin = round(oldRate/newRate);
 
-out = in(1:bin:end,1);
+out = in(:,1:bin:end);
 
 dt_old = 1/oldRate;
 

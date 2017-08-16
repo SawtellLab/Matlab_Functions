@@ -1,0 +1,5 @@
+function DefaultFigVis(hfig)
+figure(hfig)
+set(hfig, 'Color', 'white')
+box('off')
+set(gca,'TickDir','out')
