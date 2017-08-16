@@ -41,7 +41,7 @@ end
 if ~isempty(sweeps)
     % Make logical vector to sort sweeps
     for i = 1:numSortFields
-        tempvector = ismember(sweeps.(sortfield{i}),sortvalue{i});     % Take trials = value
+        tempvector = ismembertol(sweeps.(sortfield{i}),sortvalue{i},0.0001);     % Take trials = value
         % Combine multiple conditions
         if (numSortFields > 1) && (i > 1)
             if bOR % OR
